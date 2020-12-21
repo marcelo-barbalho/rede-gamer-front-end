@@ -4,7 +4,6 @@ import {Form, Button} from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/auth/auth.action"; 
 import Loading from '../../components/loading'
-import history from '../../config/history'
 
 const Login = () => {
 

@@ -20,18 +20,18 @@ const Pages = [
   }
 ]
 
-// const AdminRoute = ({...rest}) => {
-//   if(!isAuthenticated()) {
-//     return <Redirect to='/login'/> 
-//   }
-//   return <Route {...rest} />
-// }
+const AdminRoute = ({...rest}) => {
+  if(!isAuthenticated()) {
+    return <Redirect to='/login'/> 
+  }
+  return <Route {...rest} />
+}
 
 const Views = (props) => {
   return (
     <>
       <Layout>
-        <Route
+        <AdminRoute
           exact
           baseName={props.match.path}
           path={props.match.path + "dash"}
