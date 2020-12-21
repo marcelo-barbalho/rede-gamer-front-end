@@ -14,7 +14,7 @@ export const login = (props) => {
         try {
             console.log(props, "dentro da action")
             // dispatch({ type: LOGIN_LOADING, loading: true })
-            const data  = await serviceAuth(props);
+            const {data}  = await serviceAuth(props);
             console.log( 'no meio da action')
             dispatch({ type: LOGIN, data })
             saveToken(data,props.username)
