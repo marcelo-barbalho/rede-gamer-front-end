@@ -1,5 +1,5 @@
-const TOKEN_KEY  = 'rede social'
-const USER = 'rd.user'
+const TOKEN_KEY  = 'gamer network'
+const USER = 'gn.user'
 
 const getToken = () => {
     const data = JSON.parse(localStorage.getItem(TOKEN_KEY))
