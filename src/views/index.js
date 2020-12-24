@@ -16,7 +16,7 @@ const Pages = [
   {
     name: 'Home',
     path: '',
-    component:Portal
+    component:Login
   }
 ]
 

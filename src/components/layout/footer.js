@@ -16,7 +16,7 @@ export default Footer
 
 const FooterBar = styled.footer`
 height:10vh;
-background:green;
+background:#ccc;
 text-align:center;
 
 

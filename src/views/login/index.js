@@ -39,11 +39,11 @@ const Login = () => {
       <CustomLogin> 
         {loading? <Loading/> : (<Form>
           <Form.Group controlId="formBasic">
-            <Form.Label>Usuário</Form.Label>
+            <Form.Label>Usuário:</Form.Label>
             <Form.Control onChange={handleChange} name="username" value={form.username || ""} type="text" placeholder="Insira seu usuário" />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Password:</Form.Label>
             <Form.Control type="password" onChange={handleChange} name="password" value={form.password || ""} placeholder="Insira sua Senha" />
           </Form.Group>
           <Button onClick={submitLogin} disabled={!isSubmitValid()} type="submit" variant="primary">
@@ -60,5 +60,6 @@ const CustomLogin = styled.div`
   width: 30%;
   background: transparent;
   margin-left:35%;
-  margin-top:50px;
+  height:82vh;
+  padding-top:50px
 `
