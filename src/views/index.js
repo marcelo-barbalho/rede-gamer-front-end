@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import  Layout  from "../components/layout";
 import Login from './login'
-import Portal from "./portal"
+// import Portal from "./portal"
 import Dash from "./dash";
 import {isAuthenticated} from '../config/auth'
 
