@@ -20,7 +20,7 @@ export const login = (props) => {
             saveToken(data,props.username)
             http.defaults.headers["x-auth-token"] = data.token;
             console.log('antes de sair da action')
-            history.push('/dash')
+            history.push('/')
         } catch (error) {
             console.log(error)
         }

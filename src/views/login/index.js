@@ -4,6 +4,8 @@ import {Form, Button} from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/auth/auth.action"; 
 import Loading from '../../components/loading'
+import history from '../../config/history'
+
 
 const Login = () => {
 
@@ -33,13 +35,14 @@ const Login = () => {
     // history.push('/')
   }
 
+  const toForm = ()=> history.push('/adduser')
 
   return (
     <>
       <CustomLogin> 
         {loading? <Loading/> : (<Form>
           <Form.Group controlId="formBasic">
-            <Form.Label>Usuário:</Form.Label>
+            <Form.Label>User:</Form.Label>
             <Form.Control onChange={handleChange} name="username" value={form.username || ""} type="text" placeholder="Insira seu usuário" />
           </Form.Group>
           <Form.Group controlId="formBasicPassword">
@@ -49,6 +52,7 @@ const Login = () => {
           <Button onClick={submitLogin} disabled={!isSubmitValid()} type="submit" variant="primary">
             Submit
           </Button>
+          <div onClick={()=> toForm()}>New Here? Join the force!</div>
         </Form> )} 
       </CustomLogin>
     </>

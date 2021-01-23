@@ -3,11 +3,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import multi from "redux-multi";
 import authReducer from './auth/auth.reducer'
+import userReducer from './user/user.reducer'
 
 // modularizações dos reduces
 const reducers = combineReducers({
-  auth:authReducer
-  // auth: SignReducer,
+  auth:authReducer,
+  user:userReducer
   // post: PostReducer,
 });
 

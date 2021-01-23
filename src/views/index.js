@@ -2,25 +2,32 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import  Layout  from "../components/layout";
 import Login from './login'
-// import Portal from "./portal"
+import Portal from "./portal"
 import Dash from "./dash";
+import FriendPage from '../components/friendpage'
+import UserForm from '../components/user/userform'
 import {isAuthenticated} from '../config/auth'
 
 
 const Pages = [
   {
-    name: 'Login',
-    path: 'login',
-    component:Login
+    name: 'Friends',
+    path: 'friends',
+    component:FriendPage
   },
   {
     name: 'Home',
     path: '',
-    component:Login
-  }
+    component:Portal
+  },
+  {
+    name: 'Dash',
+    path: 'dash',
+    component:Dash
+  },
 ]
 
-const AdminRoute = ({...rest}) => {
+const AuthRoute = ({...rest}) => {
   if(!isAuthenticated()) {
     return <Redirect to='/login'/> 
   }
@@ -31,14 +38,20 @@ const Views = (props) => {
   return (
     <>
       <Layout>
-        <AdminRoute
+        <Route
           exact
           baseName={props.match.path}
-          path={props.match.path + "dash"}
-          component={Dash}
+          path={props.match.path + "login"}
+          component={Login}
+        />
+        <Route
+          exact
+          baseName={props.match.path}
+          path={props.match.path + "adduser"}
+          component={UserForm}
         />
       {Pages.map((item, i) =>(
-        <Route key={i} exact baseName={props.match.path} path={props.match.path + item.path} component={item.component}/>
+        <AuthRoute key={i} exact baseName={props.match.path} path={props.match.path + item.path} component={item.component}/>
         ))}
         
       </Layout>
