@@ -3,11 +3,6 @@ import {login} from '../auth/auth.action'
 import history from '../../config/history'
 
 
-
-
-
-
-
 export const createUser = (props) => {
     return async (dispatch) => { 
         try {
